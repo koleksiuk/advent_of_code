@@ -1,12 +1,14 @@
 defmodule AdventOfCode.Day02 do
-  def solve_task(file_path \\ "priv/files/day_02/input") do
-    file_path
+  @file_path = "priv/files/day_02/input"
+
+  def solve_task do
+    @file_path
     |> File.stream!
     |> solve(&calculate_area_for_row/1)
   end
 
-  def solve_ribbon(file_path \\ "priv/files/day_02/input") do
-    file_path
+  def solve_ribbon do
+    @file_path
     |> File.stream!
     |> solve(&calculate_length_for_row/1)
   end

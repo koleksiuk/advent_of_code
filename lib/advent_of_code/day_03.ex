@@ -1,19 +1,21 @@
 defmodule AdventOfCode.Day03 do
   alias AdventOfCode.Day03.Houses, as: Houses
 
-  def solve_task(file_path \\ "priv/files/day_03/input") do
+  @file_path = "priv/files/day_03/input"
+
+  def solve_task do
     split_functions = [
       fn (_index) -> true end
     ]
 
     init_houses
 
-    file_path
+    @file_path
     |> File.read!
     |> solve(split_functions)
   end
 
-  def solve_task_with_robot(file_path \\ "priv/files/day_03/input") do
+  def solve_task_with_robot do
     split_functions = [
       fn (index) -> rem(index, 2) == 0 end,
       fn (index) -> rem(index, 2) == 1 end
@@ -21,7 +23,7 @@ defmodule AdventOfCode.Day03 do
 
     init_houses
 
-    file_path
+    @file_path
     |> File.read!
     |> solve(split_functions)
   end

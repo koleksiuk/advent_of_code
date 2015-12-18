@@ -1,12 +1,14 @@
 defmodule AdventOfCode.Day01 do
-  def solve_task(file_path \\ "priv/files/day_01/input") do
-    file_path
+  @file_path "priv/files/day_01/input"
+
+  def solve_task do
+    @file_path
     |> File.read!
     |> solve
   end
 
-  def solve_basement(file_path \\ "priv/files/day_01/input") do
-    file_path
+  def solve_basement do
+    @file_path
     |> File.read!
     |> find_index(-1)
   end

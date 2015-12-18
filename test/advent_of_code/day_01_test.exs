@@ -30,4 +30,8 @@ defmodule AdventOfCode.Day01Test do
   test "it finds 1st floor at 1st char" do
     assert AdventOfCode.Day01.find_index("())))", 1) == 1
   end
+
+  test "if returns nil if floor is not found" do
+    assert AdventOfCode.Day01.find_index(")())", 4) == nil
+  end
 end

@@ -11,8 +11,10 @@ defmodule AdventOfCode.Day01 do
     |> find_index(-1)
   end
 
+  def solve("") do
+    0
+  end
 
-  def solve(""), do: 0
   def solve(input) do
     { _ , current_floor } = find_floor(input, { 0, 0 })
 
@@ -25,11 +27,21 @@ defmodule AdventOfCode.Day01 do
     found_index
   end
 
+  defp find_floor(input, solution, break_on_floor \\ nil)
+
+  defp find_floor("", solution, nil) do
+    solution
+  end
+
+  defp find_floor("", _, _) do
+    { nil, nil }
+  end
+
   defp find_floor(_input, { previous_step_count, current_floor }, current_floor) do
     { previous_step_count, current_floor }
   end
-  defp find_floor("", solution, break_on_floor), do: solution
-  defp find_floor(input, { previous_step_count, current_floor }, break_on_floor \\ nil) do
+
+  defp find_floor(input, { previous_step_count, current_floor }, break_on_floor) do
     { next_step, left_steps } = String.next_codepoint(input)
 
     direction = find_direction(next_step)

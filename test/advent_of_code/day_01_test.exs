@@ -22,4 +22,12 @@ defmodule AdventOfCode.Day01Test do
     assert AdventOfCode.Day01.solve("((()") == 2
     assert AdventOfCode.Day01.solve("())))") == -3
   end
+
+  test "it finds -2 floor index at 4th char" do
+    assert AdventOfCode.Day01.find_index("())))", -2) == 4
+  end
+
+  test "it finds 1st floor at 1st char" do
+    assert AdventOfCode.Day01.find_index("())))", 1) == 1
+  end
 end

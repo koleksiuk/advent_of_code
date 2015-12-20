@@ -1,5 +1,5 @@
 defmodule AdventOfCode.Day02 do
-  @file_path = "priv/files/day_02/input"
+  @file_path "priv/files/day_02/input"
 
   def solve_task do
     @file_path

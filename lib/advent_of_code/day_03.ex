@@ -1,7 +1,7 @@
 defmodule AdventOfCode.Day03 do
   alias AdventOfCode.Day03.Houses, as: Houses
 
-  @file_path = "priv/files/day_03/input"
+  @file_path "priv/files/day_03/input"
 
   def solve_task do
     split_functions = [
